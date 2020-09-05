@@ -1,0 +1,44 @@
+//background
+$bg: -navy, -orange, -white;
+$bg-color: $navy, $orange, $white;
+$color: $white, $navy, $navy;
+
+@for $i from 1 through 3{
+    .bg#{ nth($bg, $i)} {
+        background-color: #{ nth($bg-color, $i)};
+        color: #{ nth($color, $i)};
+    }
+}
+
+//Container
+$width: 1200, 1000, 770;
+
+@for $i from 1 through 3{
+    .container-#{ nth($width, $i) } {
+        max-width: #{ nth($width, $i) }px;
+        margin: 0 auto;
+        padding: $space 20px;
+        text-align: center;
+    }
+}
+
+@mixin button{
+    display: block;
+    background-color: $orange;
+    margin: 0 auto;
+    margin-top: 60px;
+    padding: 15px 0;
+    border-radius: 10px;
+
+}
+
+@mixin button-hover{
+    background: $darken-orange;
+    bottom: 1px;
+    transition: 0.6s;
+}
+
+.subtitle{
+    margin-top: 50px;
+    opacity: 0.9;
+}
